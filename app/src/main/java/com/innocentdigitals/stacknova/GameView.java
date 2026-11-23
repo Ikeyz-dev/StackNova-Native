@@ -279,7 +279,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback, Run
         c.drawText(s, x, y, textPaint);
     }
 
-    private void draw(Canvas c) {
+    private void drawGame(Canvas c) {
         if (scale <= 0f) return;
         long t = System.currentTimeMillis();
         float pulse = 0.6f + 0.4f * (float) Math.sin(t / 300.0);
@@ -360,7 +360,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback, Run
                 if (c != null) {
                     synchronized (lock) {
                         update(dt);
-                        draw(c);
+                        drawGame(c);
                     }
                 }
             } catch (Exception ignored) {
